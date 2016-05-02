@@ -12,7 +12,3 @@ eventEmitter.on('dyingWish', function(message){
 });
 
 eventEmitter.emit('pullTrigger');
-
-
-
-
