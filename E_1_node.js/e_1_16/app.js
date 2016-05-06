@@ -1,6 +1,5 @@
 var http = require('http');
 var querystring = require('querystring');
-var util = require('util');
 
 http.createServer(function (req, res) {
   if(req.url === '/') {
@@ -25,7 +24,6 @@ http.createServer(function (req, res) {
       });
       response.on('end',function(){
         var result = JSON.parse(zipCodeData);
-        console.log(result);
         console.log(result.results[0].address);
         res.write(result.results[0].address.toString('utf8'));
         res.end();
