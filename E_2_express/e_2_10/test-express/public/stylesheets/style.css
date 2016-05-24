@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.header {
+    display: inline;
+    border: 3px solid #00B7FF;
+    padding: 10px;
+}
+
+.header a {
+    font-size: 25px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    border: 3px solid green;
+    padding: 10px;
+
+}
+
+.bodyContent {
+    border: 3px solid #00B7FF;
+    margin-top: 8px;
+    padding: 10px;
+}

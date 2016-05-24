@@ -1,0 +1,14 @@
+h3.panel-heading {
+    margin: 0;
+}
+
+.panel.panel-primary {
+    margin: 100px auto;
+    max-width: 50%;
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+#submit-button {
+    margin-top: 15px;
+}

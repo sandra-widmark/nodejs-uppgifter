@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  include ./header.jade
+  .bodyContent
+        h1= title
+        p #{paragraph}
+        img(src="images/cat.jpg", alt="cat")
+    include ./foot.jade

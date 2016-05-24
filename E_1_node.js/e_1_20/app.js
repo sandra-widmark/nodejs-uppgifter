@@ -1,5 +1,23 @@
-//Du ska nu skapa en enkel shoppinglista-server. Servern visar en punktlista och ett formulär med ett textfält
-//där användaren kan lägga till en punkt till listan. För att servern ska komma ihåg alla tidigare inlagda
-//punkter så måste den spara informationen i en textfil. För att visa alla tidigare punkter behöver den skriva
-//till textfilen. Du vill välja att formatera texten du sparar i filen på något smart sätt.
-//Kanske du vill använda fs.appendFile
+var http = require('http');
+var fs = require('fs');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+    fs.readFile('listItems.txt', "utf-8", function(error, data) {
+        var fullBody = '';
+        req.on('data', function(chunk) {
+        fs.appendFile('listItems.txt', '<li><p>' + chunk + '</p></li>', function(err){
+        console.log('data appended to file');
+        });
+        fullBody += '<li><p>' + chunk + '</p></li>';
+    });
+    req.on('end', function() {
+      res.writeHead(200, "OK", {'Content-Type': 'text/html; charset=utf-8'});
+        res.write('<h1>Add items to shopping list</h1>');
+        res.write('<form method="POST"><input name= "Item" /><input type="submit"><enctype="multipart/form-data"></form>');
+        res.write(data);
+        res.write(fullBody);
+        res.end();
+    });
+    });
+}).listen(8080);

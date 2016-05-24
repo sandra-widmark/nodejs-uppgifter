@@ -1,0 +1,21 @@
+• Förklaring av funktionen/syftet med varje mapp och fil
+
+bin/www - scriptet som körs när man kör commandot "npm start".
+
+public - foldern med alla statiska filer som t ex css, html och bilder.
+
+routes - innehåller filer/moduler som har definierade routes som är kopplade till ett objekt som heter router (istället för att vara kopplade direkt till appen).
+
+views - är foldern för template-filer, som routes-filerna renderar.
+
+app.js - i app-filen hämtar man de olika modulerna i routes-mappen med hjälp av require. Man assignar dem även till appen genom "app.use".
+
+package.json - listar information om projektet, till exempel projektets namn och alla packages/dependencies som är installerade.
+
+
+• Vad betyder extends i index.jade?
+Extends layout i index-filen betyder att koden i layout.jade kommer att renderas i index-filen innan resterande kod.
+
+
+• Vad betyder block content i index.jade?
+block content indikerar var det unika innehållet för index.jade börjar.
